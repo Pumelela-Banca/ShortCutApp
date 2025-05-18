@@ -7,15 +7,27 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     
-        <Grid Width="800" VerticalAlignment="Top" >
+        <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-            <Button Grid.Column="0" Margin="0" Content="Add-File"></Button>
-            <Button Grid.Column="1" Margin="0" Content="Add-Folder"></Button>
-            <Button Grid.Column="2" Margin="0" Content="Add-URl"></Button>
-        </Grid>
+        <Button Grid.Column="0" Grid.Row="0" Margin="0" Content="Add-File" x:Name="AddFile"/>
+        <Button Grid.Column="1" Margin="0" Content="Add-Folder" x:Name="AddFolder"/>
+        <Button Grid.Column="2" Margin="0" Content="Add-URl" x:Name="AddURL"/>
+
+
+        <ScrollViewer Grid.ColumnSpan="3" Grid.Row="1" >
+            <WrapPanel x:Name="ButtonsPannel"/>
+        </ScrollViewer>
+            
+        
+    </Grid>
+    
 </Window>

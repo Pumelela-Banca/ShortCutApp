@@ -48,8 +48,6 @@ namespace WpfApp1
             Button newButton = new Button
             {
                 Content = name,
-                Margin = new Thickness(5),
-                Padding = new Thickness(10, 5, 10, 5),
                 Background = backGround,
                 Tag = path
             };
@@ -74,6 +72,9 @@ namespace WpfApp1
 
                 Button selectFileBtn = createButton(btnName, openFile.FileName, "File");
                 selectFileBtn.Click += Button_Click;
+
+                // Add button to window
+                ButtonsPannel.Children.Add(selectFileBtn);
             }
         }
 
@@ -93,12 +94,12 @@ namespace WpfApp1
             {
                 var startInfor = new ProcessStartInfo
                 {
-                    UseShellExecute = false,
-                    Arguments = filePath,
+                    UseShellExecute = true,
+                    FileName = filePath,
                     CreateNoWindow = true,
                 };
 
-                Process.Start(startInfo);
+                Process.Start(startInfor);
             });
 
         }

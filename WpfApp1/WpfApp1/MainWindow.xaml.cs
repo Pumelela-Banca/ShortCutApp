@@ -13,6 +13,7 @@ using System.IO;
 using System.Xml.Serialization;
 using System.Collections.Generic;
 using Microsoft.VisualBasic;
+using System.Diagnostics;
 
 namespace WpfApp1
 {
@@ -55,7 +56,7 @@ namespace WpfApp1
 
             return newButton;
         }
-        private void AddFile_Click(RoutedEventArgs e)
+        private void AddFile_Click(object sender, RoutedEventArgs e)
         {
 
             OpenFileDialog openFile = new OpenFileDialog();
@@ -65,15 +66,14 @@ namespace WpfApp1
             {
                 
                 string fileName = openFile.FileName;
-                string btnName = Interaction.InputBox("Enter Butoon Name", "Button name", "");
+                string btnName = Interaction.InputBox("Enter Button Name", "Button name", "");
                 if (string.IsNullOrEmpty(btnName))
                 {
                     btnName = fileName;
                 }
-                Console.WriteLine($"{openFile.FileName}");
-                //Button selectFile = createButton(btnName, fil)
 
-
+                Button selectFileBtn = createButton(btnName, openFile.FileName, "File");
+                selectFileBtn.Click += Button_Click;
             }
         }
 
@@ -83,8 +83,24 @@ namespace WpfApp1
             if(sender is Button clickedButton)
             {
                 string? filePath = clickedButton.Tag?.ToString();
-
+                RunProcessAsync(filePath);
             }
+        }
+
+        private async Task RunProcessAsync(string? filePath)
+        {
+            await Task.Run(() => 
+            {
+                var startInfor = new ProcessStartInfo
+                {
+                    UseShellExecute = false,
+                    Arguments = filePath,
+                    CreateNoWindow = true,
+                };
+
+                Process.Start(startInfo);
+            });
+
         }
 
         private void AddFolder_Click(object sender, RoutedEventArgs e)

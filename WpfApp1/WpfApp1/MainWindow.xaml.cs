@@ -50,8 +50,14 @@ namespace WpfApp1
             {
                 Content = name,
                 Background = backGround,
-                Tag = path
+                Tag = path,
+                ContextMenu = new ContextMenu()
             };
+
+            // Add delete
+            MenuItem deleteItem = new MenuItem { Header = "Delete" };
+            deleteItem.Click += (s, args) => ButtonsPannel.Children.Remove(newButton);
+            newButton.ContextMenu.Items.Add(deleteItem);
 
             return newButton;
         }
@@ -124,6 +130,7 @@ namespace WpfApp1
                 }
              
                 Button selectFileBtn = createButton(btnName, folder, "Folder");
+
                 selectFileBtn.Click += Button_Click;
 
                 // Add button to window
@@ -131,7 +138,6 @@ namespace WpfApp1
             }
 
         }
-
 
 
         private void AddURL_Click(object sender, RoutedEventArgs e)

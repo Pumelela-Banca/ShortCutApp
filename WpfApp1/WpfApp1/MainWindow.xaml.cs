@@ -14,6 +14,7 @@ using System.Xml.Serialization;
 using System.Collections.Generic;
 using Microsoft.VisualBasic;
 using System.Diagnostics;
+using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace WpfApp1
 {
@@ -64,6 +65,7 @@ namespace WpfApp1
             {
                 
                 string fileName = openFile.FileName;
+                
                 string btnName = Interaction.InputBox("Enter Button Name", "Button name", "");
                 if (string.IsNullOrEmpty(btnName))
                 {
@@ -106,6 +108,28 @@ namespace WpfApp1
 
         private void AddFolder_Click(object sender, RoutedEventArgs e)
         {
+            var dialog = new CommonOpenFileDialog
+            {
+                IsFolderPicker = true,
+            };
+
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+            {
+                string folder = dialog.FileName;
+                
+                string btnName = Interaction.InputBox("Enter Button Name", "Button name", "");
+                if (string.IsNullOrEmpty(btnName))
+                {
+                    btnName = System.IO.Path.GetFileName(dialog.FileName);
+                }
+             
+                Button selectFileBtn = createButton(btnName, folder, "File");
+                selectFileBtn.Click += Button_Click;
+
+                // Add button to window
+                ButtonsPannel.Children.Add(selectFileBtn);
+
+            }
 
         }
 

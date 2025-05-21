@@ -123,19 +123,35 @@ namespace WpfApp1
                     btnName = System.IO.Path.GetFileName(dialog.FileName);
                 }
              
-                Button selectFileBtn = createButton(btnName, folder, "File");
+                Button selectFileBtn = createButton(btnName, folder, "Folder");
                 selectFileBtn.Click += Button_Click;
 
                 // Add button to window
                 ButtonsPannel.Children.Add(selectFileBtn);
-
             }
 
         }
 
+
+
         private void AddURL_Click(object sender, RoutedEventArgs e)
         {
+            string urlToSave = Interaction.InputBox("Enter URL To Save", "URL", "");
+            
+            if (!string.IsNullOrEmpty(urlToSave))
+            {
+                MessageBox.Show(urlToSave);
+                string urlName = Interaction.InputBox("Enter URL Name", "Button name", "");
+                if (string.IsNullOrEmpty(urlName))
+                {
+                    urlName = urlToSave;
+                }
+                Button selectFileBtn = createButton(urlName, urlToSave, "URL");
+                selectFileBtn.Click += Button_Click;
 
+                // Add button to window
+                ButtonsPannel.Children.Add(selectFileBtn);
+            }
         }
 
         private void SaveButtons()

@@ -13,6 +13,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{810BEB66-3CBF-483C-8986-1F9F05BC7D62}|WpfApp1\\WpfApp1.csproj|c:\\users\\dell 3550\\documents\\portfoloi project\\shortcutapp\\wpfapp1\\wpfapp1\\buttondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{810BEB66-3CBF-483C-8986-1F9F05BC7D62}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\buttondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{810BEB66-3CBF-483C-8986-1F9F05BC7D62}|WpfApp1\\WpfApp1.csproj|c:\\users\\dell 3550\\documents\\portfoloi project\\shortcutapp\\wpfapp1\\wpfapp1\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{810BEB66-3CBF-483C-8986-1F9F05BC7D62}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,8 +26,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\DELL 3550\\Documents\\Portfoloi project\\ShortCutApp\\WpfApp1\\WpfApp1\\App.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\App.xaml",
+              "ToolTip": "C:\\Users\\DELL 3550\\Documents\\Portfoloi project\\ShortCutApp\\WpfApp1\\WpfApp1\\App.xaml",
+              "RelativeToolTip": "WpfApp1\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-22T22:16:09.707Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -34,8 +50,7 @@
               "RelativeToolTip": "WpfApp1\\ButtonData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvw0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T16:19:20.867Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T16:19:20.867Z"
             },
             {
               "$type": "Document",
@@ -45,7 +60,7 @@
               "RelativeDocumentMoniker": "WpfApp1\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\DELL 3550\\Documents\\Portfoloi project\\ShortCutApp\\WpfApp1\\WpfApp1\\MainWindow.xaml.cs*",
               "RelativeToolTip": "WpfApp1\\MainWindow.xaml.cs*",
-              "ViewState": "AgIAAHQAAAAAAAAAAAAAAH4AAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAMQAAAAAAAAAAAAAANIAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-10T00:41:49.093Z",
               "EditorCaption": ""

@@ -9,7 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="_45d291ef-2470-4279-85a2-38c18ebae615.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="WindowsAPICodePack-Shell" Version="1.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="_45d291ef-2470-4279-85a2-38c18ebae615.jpg" />
   </ItemGroup>
 
 </Project>

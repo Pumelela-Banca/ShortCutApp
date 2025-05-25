@@ -50,7 +50,8 @@
               "RelativeToolTip": "WpfApp1\\ButtonData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvw0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T16:19:20.867Z"
+              "WhenOpened": "2025-05-20T16:19:20.867Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -58,9 +59,9 @@
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\DELL 3550\\Documents\\Portfoloi project\\ShortCutApp\\WpfApp1\\WpfApp1\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "WpfApp1\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\DELL 3550\\Documents\\Portfoloi project\\ShortCutApp\\WpfApp1\\WpfApp1\\MainWindow.xaml.cs*",
-              "RelativeToolTip": "WpfApp1\\MainWindow.xaml.cs*",
-              "ViewState": "AgIAAMQAAAAAAAAAAAAAANIAAAAYAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\DELL 3550\\Documents\\Portfoloi project\\ShortCutApp\\WpfApp1\\WpfApp1\\MainWindow.xaml.cs",
+              "RelativeToolTip": "WpfApp1\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAMEAAAAAAAAAAAAAANoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-10T00:41:49.093Z",
               "EditorCaption": ""

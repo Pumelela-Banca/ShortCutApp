@@ -203,6 +203,10 @@ namespace WpfApp1
             }
         }
 
+
+        
+
+
         protected void FileExit_Click(object sender, RoutedEventArgs e )
         {
             OnClosed(e);
@@ -213,6 +217,8 @@ namespace WpfApp1
             //SaveButtons();
             base.OnClosed(e);
         }
+
+
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {

@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections.Generic;
 using Microsoft.Win32;
 using System.IO;
 using System.Xml.Serialization;
@@ -26,7 +27,8 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            //LoadButtons();
+            LoadButtons();
+            LoadButtonColors();
         }
 
 
@@ -196,15 +198,90 @@ namespace WpfApp1
                             Content = btnData.ButtonName,
                             Tag = btnData.ActionPath
                         };
-                        //newButton.Click += 
+                        newButton.Click += Button_Click;
                         ButtonsPannel.Children.Add(newButton);
                     }
                 }
             }
         }
 
+        private void SaveButtonColors()
+        {
+            List<ButtonData> buttons = new List<ButtonData>();
 
-        
+            buttons.Add( new ButtonData
+            {
+                ButtonName = AddFile.Name,
+                ActionPath = AddFile.Background.ToString()
+            });
+            buttons.Add(new ButtonData
+            {
+                ButtonName = AddFolder.Name,
+                ActionPath = AddFolder.Background.ToString()
+            });
+            buttons.Add(new ButtonData
+            {
+                ButtonName = AddURL.Name,
+                ActionPath = AddURL.Background.ToString()
+            });
+
+            XmlSerializer serializer = new XmlSerializer(typeof(List<ButtonData>));
+            using (TextWriter writer = new StreamWriter("buttonColors.xml"))
+            {
+                serializer.Serialize(writer, buttons);
+            }
+        }
+
+        private void LoadButtonColors()
+        {
+            if (File.Exists("buttonColors.xml"))
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(List<ButtonData>));
+                using (TextReader reader = new StreamReader("buttonColors.xml"))
+                {
+                    List<ButtonData>? buttonDataList = (List<ButtonData>?)serializer.Deserialize(reader);
+
+                    if (buttonDataList != null)
+                    {
+                        foreach (var buttonData in buttonDataList)
+                        {
+                            switch (buttonData.ButtonName)
+                            {
+                                case "AddFile":
+
+                                    SetButtonColor(AddFile, buttonData.ActionPath);
+                                    break;
+                                case "AddFolder":
+                                    SetButtonColor(AddFolder, buttonData.ActionPath);
+                                    break;
+                                case "AddURL":
+                                    SetButtonColor(AddURL, buttonData.ActionPath);
+                                    break;
+                            }
+                        }
+                    }
+                }
+            }
+                
+        }
+
+        public void SetButtonColor(Button button, string? userColor)
+        {
+            try
+            {
+#pragma warning disable
+                // Convert the user-provided string into a SolidColorBrush
+                button.Background = (SolidColorBrush)new BrushConverter().ConvertFromString(userColor);
+#pragma warning disable
+            }
+            catch
+            {
+                // Handle invalid color strings
+                button.Background = Brushes.Transparent; // Default fallback color
+            }
+        }
+
+
 
 
         protected void FileExit_Click(object sender, RoutedEventArgs e )
@@ -214,7 +291,8 @@ namespace WpfApp1
 
         protected override void OnClosed(EventArgs e)
         {
-            //SaveButtons();
+            SaveButtons();
+            SaveButtonColors();
             base.OnClosed(e);
         }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1
 {
-    internal class ButtonData
+    public class ButtonData
     {
         public string? ButtonName { get; set; }
         public string? ActionPath { get; set; }

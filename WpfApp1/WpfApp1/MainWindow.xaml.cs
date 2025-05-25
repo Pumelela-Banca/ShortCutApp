@@ -43,7 +43,7 @@ namespace WpfApp1
             }
             else
             {
-                backGround = Brushes.DarkOliveGreen;
+                backGround = Brushes.LightYellow;
             }
             
             Button newButton = new Button
@@ -222,17 +222,32 @@ namespace WpfApp1
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            
+            var dialog = new ColorPickerDialog();
+            if (dialog.ShowDialog() == true && dialog.SelectedColor.HasValue)
+            {
+                Color selected = dialog.SelectedColor.Value;
+                AddFile.Background = new SolidColorBrush(selected); 
+            }
         }
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
-
+            var dialog = new ColorPickerDialog();
+            if (dialog.ShowDialog() == true && dialog.SelectedColor.HasValue)
+            {
+                Color selected = dialog.SelectedColor.Value;
+                AddFolder.Background = new SolidColorBrush(selected); 
+            }
         }
 
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
         {
-
+            var dialog = new ColorPickerDialog();
+            if (dialog.ShowDialog() == true && dialog.SelectedColor.HasValue)
+            {
+                Color selected = dialog.SelectedColor.Value;
+                AddURL.Background = new SolidColorBrush(selected);
+            }
         }
     }
 }
